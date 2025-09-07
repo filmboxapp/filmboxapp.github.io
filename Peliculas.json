@@ -1,5 +1,11 @@
 [
   {
+  "title": "prueba garfield ",
+  "poster": "https://image.tmdb.org/t/p/original/d2RVvCaAaKqmA7abws1bHl8Mgkm.jpg",
+  "link": "https://filmboxapp.github.io/lobo-prueba-/",
+  "quality": "HD"
+  },
+  {
   "title": "el conjuro 4 últimos ritos",
   "poster": "https://image.tmdb.org/t/p/original/rLvtnjRnF8SpKyjdGxG1Ijpfn9S.jpg",
   "link": "https://filmboxapp.github.io/El-conjuro-4-ultimos-ritos-/",
