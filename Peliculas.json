@@ -61,6 +61,12 @@
   "quality": "HD"
   },
   {
+  "title": "slender man",
+  "poster": "https://image.tmdb.org/t/p/original/g040jiHRCiFDgRomCZF2Hjmnnsw.jpg",
+  "link": "https://filmboxapp.github.io/SLENDER-MAN/",
+  "quality": "HD"
+  },
+  {
     "title": "kung fu panda 4",
     "poster": "https://image.tmdb.org/t/p/original/7JspmokDnpm8SEg28wtstfGps0K.jpg",
     "link": "https://filmboxapp.github.io/kung-fu-panda-4/",
