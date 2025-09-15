@@ -183,6 +183,13 @@
   window.addEventListener("load", function() {
     const loader = document.getElementById("loader");
 
+    // Revisar si ya se mostró en esta sesión
+    if (sessionStorage.getItem("loaderShown")) {
+      loader.style.display = "none"; // no mostrar de nuevo
+      return;
+    }
+
+    // Si no se ha mostrado → mostrar y luego ocultar
     setTimeout(() => {
       loader.style.transition = "opacity 1s ease";
       loader.style.opacity = 0;
@@ -191,6 +198,9 @@
         loader.style.display = "none";
       }, 1000);
     }, 4000); // 4 segundos
+
+    // Guardar que ya se mostró
+    sessionStorage.setItem("loaderShown", "true");
   });
 </script>
 <header>
