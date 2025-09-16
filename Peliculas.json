@@ -1,5 +1,10 @@
 [
-  
+  {
+  "title": "el otro paris",
+  "poster": "https://image.tmdb.org/t/p/original/m5wOylueyYAC0zzMXGmlvwHe2cK.jpg",
+  "link": "https://filmboxapp.github.io/el-otro-paris/",
+  "quality": "HD"
+  },
   {
   "title": "el conjuro 4 últimos ritos",
   "poster": "https://image.tmdb.org/t/p/original/rLvtnjRnF8SpKyjdGxG1Ijpfn9S.jpg",
