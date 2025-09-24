@@ -136,79 +136,8 @@
 </style>
 </head>
 <body>
-<script>
-(function() {
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
-    const isAndroid = /android/i.test(ua);
-    const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
 
-    // Bloquear scroll y teclado
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
-    document.body.style.height = '100vh';
-
-    // Evitar clics y gestos en el contenido detrás del overlay
-    document.body.addEventListener('click', e => e.stopPropagation(), true);
-    document.body.addEventListener('touchstart', e => e.stopPropagation(), true);
-    document.body.addEventListener('keydown', e => e.stopPropagation(), true);
-
-    // Crear overlay
-    const overlayHTML = `
-        <div id="blockOverlay" style="
-            position:fixed;
-            top:0; left:0; right:0; bottom:0;
-            width:100vw; height:100vh;
-            display:flex; flex-direction:column;
-            justify-content:center; align-items:center;
-            background:#1c1c1c; color:#fff; font-family:sans-serif;
-            text-align:center; padding:20px; z-index:99999;
-            opacity:0; animation:fadeIn 1s forwards;
-        ">
-            <h1 style="font-size:30px; margin-bottom:20px; animation:slideDown 0.8s forwards;">🚫 Acceso no permitido</h1>
-            <p style="font-size:18px; margin-bottom:20px; animation:slideUp 0.8s 0.3s forwards;">
-                Para usar <strong>Filmbox</strong>, sigue estos pasos:
-            </p>
-            <div style="text-align:left; font-size:16px; animation:slideUp 0.8s 0.6s forwards;">
-                ${isAndroid ? `
-                    <ol style="margin-left:20px;">
-                        <li>📱 Instala la APK en tu dispositivo Android.</li>
-                        <li>🎬 Abre la app y disfruta de Filmbox.</li>
-                    </ol>
-                    <a href="https://filmbox.lat" target="_blank" style="
-                        display:inline-block;
-                        margin-top:15px;
-                        padding:12px 25px;
-                        background:#ff3b30;
-                        color:#fff;
-                        border-radius:10px;
-                        text-decoration:none;
-                        font-weight:bold;
-                        animation:slideUp 0.8s 0.9s forwards;
-                    ">📥 Descargar APK</a>
-                ` : ''}
-                ${isIOS ? `
-                    <ol style="margin-left:20px;">
-                        <li>🌐 Abre Safari y entra a Filmbox.</li>
-                        <li>➕ Toca el botón de compartir y selecciona "Agregar a pantalla de inicio".</li>
-                        <li>🍏 Abre Filmbox desde la pantalla de inicio de tu iPhone o iPad.</li>
-                        <li>🎬 ¡Disfruta de Filmbox como una app en iOS!</li>
-                    </ol>
-                ` : ''}
-            </div>
-            <p style="font-size:14px;color:#bbb;margin-top:20px; animation:slideUp 0.8s 1.2s forwards;">
-                No puedes usar el sitio desde un navegador normal.
-            </p>
-        </div>
-        <style>
-            @keyframes fadeIn { to { opacity:1; } }
-            @keyframes slideDown { from { transform: translateY(-50px); opacity:0; } to { transform: translateY(0); opacity:1; } }
-            @keyframes slideUp { from { transform: translateY(50px); opacity:0; } to { transform: translateY(0); opacity:1; } }
-        </style>
-    `;
-    
-    document.body.innerHTML = overlayHTML;
-})();
-      </script>
+            
   
 <!-- Loader -->
 <div id="loader" style="
