@@ -142,15 +142,26 @@
     const isAndroid = /android/i.test(ua);
     const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
 
-    // Siempre mostrar overlay bloqueado
-    document.body.innerHTML = `
+    // Bloquear scroll y teclado
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+
+    // Evitar clics y gestos en el contenido detrás del overlay
+    document.body.addEventListener('click', e => e.stopPropagation(), true);
+    document.body.addEventListener('touchstart', e => e.stopPropagation(), true);
+    document.body.addEventListener('keydown', e => e.stopPropagation(), true);
+
+    // Crear overlay
+    const overlayHTML = `
         <div id="blockOverlay" style="
             position:fixed;
             top:0; left:0; right:0; bottom:0;
+            width:100vw; height:100vh;
             display:flex; flex-direction:column;
             justify-content:center; align-items:center;
             background:#1c1c1c; color:#fff; font-family:sans-serif;
-            text-align:center; padding:20px; z-index:9999;
+            text-align:center; padding:20px; z-index:99999;
             opacity:0; animation:fadeIn 1s forwards;
         ">
             <h1 style="font-size:30px; margin-bottom:20px; animation:slideDown 0.8s forwards;">🚫 Acceso no permitido</h1>
@@ -160,7 +171,6 @@
             <div style="text-align:left; font-size:16px; animation:slideUp 0.8s 0.6s forwards;">
                 ${isAndroid ? `
                     <ol style="margin-left:20px;">
-                        <li>📥 Descarga la APK desde <a href="https://filmbox.lat" target="_blank" style="color:#00aaff;">filmbox.lat</a></li>
                         <li>📱 Instala la APK en tu dispositivo Android.</li>
                         <li>🎬 Abre la app y disfruta de Filmbox.</li>
                     </ol>
@@ -195,9 +205,10 @@
             @keyframes slideUp { from { transform: translateY(50px); opacity:0; } to { transform: translateY(0); opacity:1; } }
         </style>
     `;
+    
+    document.body.innerHTML = overlayHTML;
 })();
-</script>
-
+      </script>
   
 <!-- Loader -->
 <div id="loader" style="
