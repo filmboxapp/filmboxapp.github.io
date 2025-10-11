@@ -24,6 +24,24 @@
   "quality": "CAM"
   },
   {
+  "title": "terrifier",
+  "poster": "https://image.tmdb.org/t/p/original/fjXqhGmaeQpB73WerhrYU6HlyV5.jpg",
+  "link": "https://filmboxapp.github.io/terrifier-1/",
+  "quality": "HD"
+  },
+  {
+  "title": "terrifier 2",
+  "poster": "https://image.tmdb.org/t/p/original/qEAlwXbYk6IHA4ztoS2XFFaa7Xo.jpg",
+  "link": "https://filmboxapp.github.io/Terrifier-2/",
+  "quality": "HD"
+  },
+  {
+  "title": "terrifier 3",
+  "poster": "https://image.tmdb.org/t/p/original/gykgZQmokYCwV7rbNBsi2tCSJQ0.jpg",
+  "link": "https://filmboxapp.github.io/terrifier-3/",
+  "quality": "HD"
+  },
+  {
   "title": "una batalla tras otra",
   "poster": "https://image.tmdb.org/t/p/original/iZ1499F6hYxDxiqioy8oSUaxipG.jpg",
   "link": "https://filmboxapp.github.io/Una-batalla-tras-otra/",
