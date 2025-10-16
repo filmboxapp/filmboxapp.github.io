@@ -287,6 +287,27 @@ searchInput.addEventListener('input', () => {
   renderMovies(filtered);
 });
 </script>
+<script>
+  // 🔹 Guardar posición del scroll antes de salir de la página
+  window.addEventListener("beforeunload", () => {
+    sessionStorage.setItem("scrollPos", window.scrollY);
+  });
 
+  // 🔹 Restaurar posición cuando el usuario regresa o recarga
+  window.addEventListener("load", () => {
+    const scrollPos = sessionStorage.getItem("scrollPos");
+    if (scrollPos) {
+      setTimeout(() => {
+        window.scrollTo(0, parseInt(scrollPos));
+      }, 100); // pequeño retraso para asegurar que el contenido ya se renderizó
+    }
+  });
+
+  // 🔹 Limpiar el scroll guardado si entra desde otra sección (opcional)
+  if (!document.referrer.includes(window.location.hostname)) {
+    sessionStorage.removeItem("scrollPos");
+  }
+</script>
+  
 </body>
 </html>
