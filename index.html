@@ -309,6 +309,65 @@ searchInput.addEventListener('input', () => {
     sessionStorage.removeItem("scrollPos");
   }
 </script>
+
+<!-- 🔒 Protección total de enlaces y contenido -->
+<script>
+  // Bloquear clic derecho
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // Bloquear selección y arrastre
+  document.addEventListener('selectstart', event => event.preventDefault());
+  document.addEventListener('dragstart', event => event.preventDefault());
+
+  // Bloquear clics con botón derecho o medio
+  document.addEventListener('mousedown', event => {
+    if (event.button === 1 || event.button === 2) event.preventDefault();
+  });
+
+  // Bloquear mantener presionado en pantallas táctiles
+  let touchTimer;
+  document.addEventListener('touchstart', () => {
+    touchTimer = setTimeout(() => {
+      // Si mantiene presionado más de medio segundo, se cancela
+      event.preventDefault();
+    }, 500);
+  });
+  document.addEventListener('touchend', () => {
+    clearTimeout(touchTimer);
+  });
+
+  // Ocultar href real sin romper los enlaces
+  document.querySelectorAll('a').forEach(a => {
+    const url = a.getAttribute('href');
+    if (url) {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        window.location.href = url;
+      });
+      a.removeAttribute('href');
+      a.style.cursor = 'pointer';
+    }
+  });
+
+  // Desactivar teclas de inspección (F12, Ctrl+Shift+I, Ctrl+U)
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123 || // F12
+        (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I
+        (e.ctrlKey && e.shiftKey && e.keyCode == 74) || // Ctrl+Shift+J
+        (e.ctrlKey && e.keyCode == 85)) { // Ctrl+U
+      return false;
+    }
+  };
+</script>
+
+<!-- CSS extra para evitar selección o menú en móviles -->
+<style>
+  * {
+    -webkit-touch-callout: none; /* Evita menú al mantener presionado (iOS/Android) */
+    -webkit-user-select: none;  /* Bloquea selección */
+    user-select: none;
+  }
+</style>
   
 </body>
 </html>
