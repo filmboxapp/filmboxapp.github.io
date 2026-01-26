@@ -1,6 +1,6 @@
 [
   {
-    "title": "El botín",
+    "title": "El botï¿½n",
     "poster": "https://image.tmdb.org/t/p/original/28hTjQCq0ul6WUR22qRsWEeuxlj.jpg",
     "link": "https://filmboxplay.lat/EL-BOTIN-/",
     "quality": "HD"
@@ -663,6 +663,12 @@
     "title": "Drï¿½cula, la leyenda jamï¿½s contada",
     "poster": "https://image.tmdb.org/t/p/original/gEJqywFJ6NC7udiUYoB1Z0we2LV.jpg",
     "link": "https://filmboxplay.lat/DRACULA-LA-HISTORIA-JAMAS-CONTADA/",
+    "quality": "HD"
+  },
+  {
+    "title": "El dictador",
+    "poster": "https://image.tmdb.org/t/p/original/oQZGHRqZnVAMYCVKjWFoyszINqj.jpg",
+    "link": "https://filmboxplay.lat/El-DICTADOR-2012/",
     "quality": "HD"
   }
 ]
