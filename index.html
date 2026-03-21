@@ -216,7 +216,7 @@
 </header>
   <!-- 🔔 Aviso global debajo del logo/buscador -->
 <div class="marquee">
-  <span>MEJORANDO NUESTROS SERVICIOS</span>
+  <span>NUEVO CONTENIDO AGREGO</span>
 </div>
 
 <style>
@@ -287,6 +287,50 @@ searchInput.addEventListener('input', () => {
   const filtered = moviesData.filter(movie => movie.title.toLowerCase().includes(q));
   renderMovies(filtered);
 });
+
+let isSearching = false;
+
+// Detectar cuando empieza a buscar
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.toLowerCase();
+
+  if (q.length > 0 && !isSearching) {
+    history.pushState({ search: true }, '');
+    isSearching = true;
+  }
+
+  if (q.length === 0) {
+    isSearching = false;
+
+    // 🔥 quitar foco si borra todo manualmente
+    searchInput.blur();
+  }
+
+  const filtered = moviesData.filter(movie =>
+    movie.title.toLowerCase().includes(q)
+  );
+
+  renderMovies(filtered);
+});
+
+// 🔥 BOTÓN ATRÁS (CLAVE)
+window.addEventListener('popstate', () => {
+  if (isSearching || searchInput.value !== '') {
+
+    // limpiar buscador
+    searchInput.value = '';
+    renderMovies(moviesData);
+
+    isSearching = false;
+
+    // 🔥 cerrar teclado / quitar cursor
+    searchInput.blur();
+
+    // evitar que se salga de la página
+    history.pushState({ search: false }, '');
+  }
+});
+  
 </script>
 <script>
   // 🔹 Guardar posición del scroll antes de salir de la página
