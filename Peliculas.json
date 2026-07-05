@@ -3,7 +3,7 @@
     "title": "Toy Story 5",
     "poster": "https://image.tmdb.org/t/p/original/1yF3AztF3rQ8MZ8En8974AWo5zZ.jpg",
     "link": "https://filmboxplay.lat/Toy-story-5/",
-    "quality": "HDTS"
+    "quality": "HD"
   },
   {
     "title": "Backrooms",
@@ -216,7 +216,7 @@
     "quality": "HD"
   },
   {
-    "title": "Riquísimos... Por Cierto",
+    "title": "RiquÃ­simos... Por Cierto",
     "poster": "https://image.tmdb.org/t/p/original/6QQyEV4SfRvQhcjvPFyACxJiJA7.jpg",
     "link": "https://filmboxplay.lat/riquisimos-por-cierto-s1/",
     "quality": "HD"
@@ -630,7 +630,7 @@
     "quality": "HD"
   },
   {
-    "title": "megalodon 2 la fosa",
+    "title": "Âmegalodon 2 la fosa",
     "poster": "https://image.tmdb.org/t/p/original/30MUcuI6p4toyfCV349wZleqG5d.jpg",
     "link": "https://filmboxapp.github.io/Megalod-n2/",
     "quality": "HD"
@@ -863,4 +863,4 @@
     "link": "https://filmboxplay.lat/Avengers-2-la-era-de-ultron/",
     "quality": "HD"
   }
-    ]
+]
